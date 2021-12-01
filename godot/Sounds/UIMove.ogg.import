@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/UIMove.ogg-5a96ab91e01e3d3dcb364527215200aa.oggstr"
+
+[deps]
+
+source_file="res://Sounds/UIMove.ogg"
+dest_files=[ "res://.import/UIMove.ogg-5a96ab91e01e3d3dcb364527215200aa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,258 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Main/FSM/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Logo.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Main/FSM/TitleProxyTarget.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/BitmapFont.fnt" type="BitmapFont" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.112179, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_box_extents = Vector3( 400, 400, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( -100, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 100, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="Animation" id=6]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/PressStart:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Logo/ParticleCenter:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.6, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VBoxContainer/infoLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.815686 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer/BGParticles/Particles3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/PressStart:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.188235, 0.901961, 0.666667, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/infoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.513726 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="TitleScreen" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="TitleProxyTarget" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="TitleProxyTarget"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGParticles" type="Control" parent="TitleProxyTarget/CenterContainer"]
+margin_left = 960.0
+margin_top = 540.0
+margin_right = 960.0
+margin_bottom = 540.0
+
+[node name="Particles3" type="Particles2D" parent="TitleProxyTarget/CenterContainer/BGParticles"]
+modulate = Color( 1, 1, 1, 0 )
+amount = 800
+lifetime = 3.0
+preprocess = 10.0
+speed_scale = 0.2
+randomness = 0.5
+process_material = SubResource( 3 )
+
+[node name="Logo" type="TextureRect" parent="TitleProxyTarget/CenterContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 832.0
+margin_top = 412.0
+margin_right = 1088.0
+margin_bottom = 668.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParticleCenter" type="Control" parent="TitleProxyTarget/CenterContainer/Logo"]
+modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles" type="Particles2D" parent="TitleProxyTarget/CenterContainer/Logo/ParticleCenter"]
+modulate = Color( 0.933333, 0.670588, 0.831373, 1 )
+position = Vector2( 0, -1 )
+amount = 800
+lifetime = 3.0
+preprocess = 10.0
+randomness = 0.5
+process_material = SubResource( 4 )
+
+[node name="Particles2" type="Particles2D" parent="TitleProxyTarget/CenterContainer/Logo/ParticleCenter"]
+modulate = Color( 0.933333, 0.670588, 0.831373, 1 )
+position = Vector2( 0, -1 )
+amount = 800
+lifetime = 3.0
+preprocess = 10.0
+randomness = 0.5
+process_material = SubResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleProxyTarget"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infoLabel" type="RichTextLabel" parent="TitleProxyTarget/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 976.0
+margin_right = 1920.0
+margin_bottom = 1026.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]a game by [color=#d8a0b2]Bauxitedev[/color], made for [color=#d8a0b2]Github Game Off 2021[/color]"
+text = "a game by Bauxitedev, made for Github Game Off 2021"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressStart" type="RichTextLabel" parent="TitleProxyTarget/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 1030.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]PRESS START[/center]
+"
+text = "PRESS START
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleProxyTarget"]
+autoplay = "TitleScreenAnim"
+anims/TitleScreenAnim = SubResource( 6 )
+anims/TitleScreenPressStart = SubResource( 7 )
+
+[node name="Tween" type="Tween" parent="TitleProxyTarget"]
+
+[connection signal="animation_finished" from="TitleProxyTarget/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

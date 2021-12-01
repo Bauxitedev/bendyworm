@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Player/Weapon/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player/Weapon/FSM/Idle.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player/Weapon/FSM/Shooting.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/FSM/FSM.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/Charge.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Player/Weapon/FSM/Charging.gd" type="Script" id=9]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 5 )
+
+[node name="Weapon" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="FSM" parent="." instance=ExtResource( 4 )]
+initial_state = "Idle"
+
+[node name="Idle" type="Spatial" parent="FSM"]
+script = ExtResource( 2 )
+
+[node name="Charging" type="Spatial" parent="FSM"]
+script = ExtResource( 9 )
+
+[node name="AudioCharge" type="AudioStreamPlayer" parent="FSM/Charging"]
+stream = SubResource( 1 )
+pitch_scale = 0.7
+autoplay = true
+bus = "SFX"
+
+[node name="Shooting" parent="FSM" instance=ExtResource( 3 )]

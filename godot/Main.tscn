@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/FSM/FSM.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Main/FSM/MainGame.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Main/FSM/Intro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://MainEnvironment.tres" type="Environment" id=5]
+[ext_resource path="res://Scenes/Main/FSM/Credits.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Main/FSM/TitleScreen.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="WorldEnvironment"]
+environment = ExtResource( 5 )
+script = ExtResource( 4 )
+
+[node name="FSM" parent="." instance=ExtResource( 1 )]
+initial_state = "Intro"
+
+[node name="Intro" parent="FSM" instance=ExtResource( 3 )]
+
+[node name="TitleScreen" parent="FSM" instance=ExtResource( 7 )]
+
+[node name="MainGame" type="Spatial" parent="FSM"]
+script = ExtResource( 2 )
+
+[node name="RetryTimer" type="Timer" parent="FSM/MainGame"]
+wait_time = 2.0
+one_shot = true
+
+[node name="WinTimer" type="Timer" parent="FSM/MainGame"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Credits" parent="FSM" instance=ExtResource( 6 )]
+
+[connection signal="timeout" from="FSM/MainGame/RetryTimer" to="FSM/MainGame" method="_on_RetryTimer_timeout"]
+[connection signal="timeout" from="FSM/MainGame/WinTimer" to="FSM/MainGame" method="_on_WinTimer_timeout"]

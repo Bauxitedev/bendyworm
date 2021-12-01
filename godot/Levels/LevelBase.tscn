@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/LevelBase.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Worm/Worm.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/WormPathBase.gd" type="Script" id=3]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Worm" parent="." instance=ExtResource( 2 )]
+path2d_nodepath = NodePath("../WormPath")
+
+[node name="WormPath" type="Path2D" parent="."]
+self_modulate = Color( 1, 1, 1, 1 )
+curve = null
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ShootStart.ogg-43884dc4b8a5454cf01172bf59a3f574.oggstr"
+
+[deps]
+
+source_file="res://Sounds/ShootStart.ogg"
+dest_files=[ "res://.import/ShootStart.ogg-43884dc4b8a5454cf01172bf59a3f574.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

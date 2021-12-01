@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Singletons/Audio.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/BrainDie.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/PlayerDie.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/ShootStart.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/PlayerUpgrade.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/ShardCollect.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/Error.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/RollerShock.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/PlayerHurt.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/Jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/UIMove.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/RollerDie.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/ShieldBreak.wav" type="AudioStream" id=13]
+
+[node name="Audio" type="Spatial"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="PlayingGlobalSounds" type="Node" parent="."]
+
+[node name="SoundTemplates" type="Node" parent="."]
+
+[node name="BossDie" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 2 )
+volume_db = 6.0
+bus = "SFX"
+
+[node name="PlayerDie" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 3 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="PlayerUpgrade" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 5 )
+volume_db = 3.0
+bus = "SFX"
+
+[node name="PlayerHurt" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="ShardCollect" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="ShootStart" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Error" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 7 )
+volume_db = -6.0
+bus = "SFX"
+
+[node name="Jump" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 10 )
+volume_db = 6.0
+bus = "SFX"
+
+[node name="UIMove" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 11 )
+volume_db = -6.0
+pitch_scale = 1.29
+bus = "SFX"
+
+[node name="UISelect" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 11 )
+pitch_scale = 0.65
+bus = "SFX"
+
+[node name="ShieldBreak" type="AudioStreamPlayer" parent="SoundTemplates"]
+stream = ExtResource( 13 )
+volume_db = 5.0
+bus = "SFX"
+
+[node name="RollerShock" type="AudioStreamPlayer3D" parent="SoundTemplates"]
+stream = ExtResource( 8 )
+attenuation_model = 3
+unit_db = 80.0
+max_db = 0.0
+bus = "SFX"
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="RollerDie" type="AudioStreamPlayer3D" parent="SoundTemplates"]
+stream = ExtResource( 12 )
+attenuation_model = 3
+unit_db = 80.0
+unit_size = 100.0
+max_db = 6.0
+bus = "SFX"
+attenuation_filter_cutoff_hz = 20500.0

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Singletons/PathRasterizer.gdns" type="Script" id=1]
+
+[node name="PathRasterizer" type="Node"]
+script = ExtResource( 1 )
+uv_contraction = 0.4

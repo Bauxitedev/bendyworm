@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Enemy/Brain.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Brain.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Components/HealthHolder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/Brain_Indexed.png" type="Texture" id=4]
+[ext_resource path="res://Shaders/smooth_pixel_art_3d.shader" type="Shader" id=5]
+[ext_resource path="res://Scenes/Components/Flasher.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/HealthBar3D.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 43.84
+height = 25.3333
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/albedo_color = Color( 1.2, 0.71, 1.15, 1 )
+shader_param/circle_progress = 1.0
+shader_param/albedo_texture = ExtResource( 4 )
+
+[node name="Brain" type="StaticBody" groups=[
+"ENEMY",
+]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.33068e-08, -0.13575, 0.990743, -5.93383e-09, 0.990743, 0.13575, -1, 0, -4.37114e-08, -0.258377, 3.10043, 0 )
+shape = SubResource( 1 )
+
+[node name="HealthHolder" parent="." instance=ExtResource( 3 )]
+max_hp = 2000.0
+
+[node name="TweenIdle" type="Tween" parent="."]
+
+[node name="SpriteBase" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="HealthBar" parent="SpriteBase" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -62, 30 )
+health_holder_path = NodePath("../../HealthHolder")
+
+[node name="Sprite3D" type="Sprite3D" parent="SpriteBase"]
+material_override = SubResource( 2 )
+pixel_size = 1.0
+texture = ExtResource( 2 )
+
+[node name="Flasher" parent="SpriteBase/Sprite3D" instance=ExtResource( 6 )]
+
+[connection signal="on_death" from="HealthHolder" to="." method="_on_HealthHolder_on_death"]
+[connection signal="on_hurt" from="HealthHolder" to="." method="_on_HealthHolder_on_hurt"]

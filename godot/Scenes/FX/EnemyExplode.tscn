@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Materials/Particles/EnemyExplode.tres" type="Material" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "EnemyExplode"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Fireball:mesh:material:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Color( 2.01, 0.83, 1.98, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Fireball:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.2 ),
+"transitions": PoolRealArray( 0.125, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+render_priority = 1
+flags_unshaded = true
+params_blend_mode = 1
+albedo_color = Color( 2.01, 0.83, 1.98, 1 )
+
+[sub_resource type="SphereMesh" id=3]
+resource_local_to_scene = true
+material = SubResource( 2 )
+radius = 32.0
+height = 64.0
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_cull_mode = 2
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
+
+[node name="EnemyExplode" type="Spatial"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "EnemyExplode"
+anims/EnemyExplode = SubResource( 1 )
+
+[node name="Fireball" type="MeshInstance" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Particles" type="Particles" parent="."]
+amount = 800
+lifetime = 2.0
+speed_scale = 2.0
+visibility_aabb = AABB( -86.7279, -89.3723, -93.3868, 165.898, 171.138, 186.04 )
+process_material = ExtResource( 1 )
+draw_pass_1 = SubResource( 8 )

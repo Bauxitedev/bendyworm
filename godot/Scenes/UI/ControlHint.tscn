@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Textures/UI/ControlHintMove.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/smooth_pixel_art_3d.shader" type="Shader" id=2]
+[ext_resource path="res://Scenes/UI/ControlHint.gd" type="Script" id=3]
+[ext_resource path="res://Textures/UI/ControlHintJumpAnim.tres" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/albedo_color = Color( 1, 1, 1, 1 )
+shader_param/circle_progress = 1.0
+shader_param/albedo_texture = ExtResource( 4 )
+
+[node name="ControlHint" type="Sprite3D"]
+material_override = SubResource( 1 )
+pixel_size = 1.0
+texture = ExtResource( 1 )
+script = ExtResource( 3 )

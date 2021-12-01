@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="brain" color="#ff00e6"/>
+ <objecttype name="control_hint" color="#ffff00"/>
+ <objecttype name="dialogue_trigger" color="#646466"/>
+ <objecttype name="enemy_redblock" color="#a40010"/>
+ <objecttype name="enemy_roller" color="#9105a4"/>
+ <objecttype name="player" color="#0055ff"/>
+ <objecttype name="shard" color="#4aa412"/>
+</objecttypes>

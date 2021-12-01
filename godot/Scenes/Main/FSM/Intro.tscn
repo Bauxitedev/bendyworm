@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Main/FSM/Intro.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Main/FSM/IntroProxyTarget.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/BitmapFont.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Textures/BauxitedevLogo.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "IntroAnim"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LogoContainer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1.2, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LogoContainer/Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+
+[node name="Intro" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="IntroProxyTarget" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="IntroProxyTarget"]
+autoplay = "IntroAnim"
+anims/IntroAnim = SubResource( 1 )
+
+[node name="LogoContainer" type="CenterContainer" parent="IntroProxyTarget"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="IntroProxyTarget/LogoContainer"]
+margin_left = 960.0
+margin_top = 540.0
+margin_right = 960.0
+margin_bottom = 540.0
+
+[node name="Logo" type="Sprite" parent="IntroProxyTarget/LogoContainer/Control"]
+modulate = Color( 0.886275, 0.698039, 0.439216, 1 )
+material = SubResource( 2 )
+rotation = 3.14159
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="Logo2" type="Sprite" parent="IntroProxyTarget/LogoContainer/Control"]
+modulate = Color( 0.445, 0.630417, 0.89, 1 )
+material = SubResource( 2 )
+scale = Vector2( 0.42, 0.42 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="RichTextLabel" parent="IntroProxyTarget/LogoContainer"]
+margin_left = 810.0
+margin_top = 527.0
+margin_right = 1110.0
+margin_bottom = 553.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Bauxitedev
+[color=gray]presents...[/color][/center]"
+text = "Bauxitedev
+presents..."
+fit_content_height = true
+scroll_active = false
+
+[connection signal="animation_finished" from="IntroProxyTarget/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

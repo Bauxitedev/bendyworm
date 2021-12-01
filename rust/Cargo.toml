@@ -1,0 +1,16 @@
+[package]
+edition = "2018"
+name = "bendyworm_rust"
+version = "1.0.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.19"
+gdnative = {git = "https://github.com/Bromeon/godot-rust.git", rev = "3bc2a5475a3e7b6aab9fbf12438594b1366c160f"}# needed for consistent property order
+itertools = "0.10.1"
+rand = "0.8.4"
+rayon = "1.5.1"

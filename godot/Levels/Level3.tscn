@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/LevelBase.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( -395.553, 0, 395.553, 0, -2.17041, 33.4889, -410.863, 5.54798, 410.863, -5.54798, 821.714, 31.2367, -386.261, 4.99323, 386.261, -4.99323, 1340.22, 786.719, -90.9279, 63.9211, 90.9279, -63.9211, 1825, 654, 0, 0, 0, 0, 2110, 401 )
+}
+
+[node name="Level" instance=ExtResource( 1 )]
+level_tilemap_number = 3
+
+[node name="WormPath" parent="." index="1"]
+curve = SubResource( 1 )

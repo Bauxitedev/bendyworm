@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/BitmapFont.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://Scenes/UI/PauseMenu/MenuItemTemplates/SliderItem.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/HUD/HealthBarFG.tres" type="StyleBox" id=3]
+[ext_resource path="res://Scenes/UI/HUD/HealthBarBG.tres" type="StyleBox" id=4]
+
+[node name="SliderItem" type="Control"]
+margin_right = 177.0
+margin_bottom = 57.0
+size_flags_vertical = 7
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 86.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "[slider here]"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 90.0
+margin_right = 177.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 4
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/MarginContainer"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/fg = ExtResource( 3 )
+custom_styles/bg = ExtResource( 4 )
+max_value = 1.0
+value = 0.25
+percent_visible = false

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Singletons/FXSpawner.gd" type="Script" id=1]
+
+[node name="FXSpawner" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CollectShard" parent="." instance_placeholder="res://Scenes/FX/CollectShard.tscn"]
+
+[node name="BrainExplode" parent="." instance_placeholder="res://Scenes/FX/BrainExplode.tscn"]
+
+[node name="EnemyExplode" parent="." instance_placeholder="res://Scenes/FX/EnemyExplode.tscn"]
+
+[node name="Spark" parent="." instance_placeholder="res://Scenes/FX/Spark.tscn"]
+
+[node name="BrainShieldExplode" parent="." instance_placeholder="res://Scenes/FX/BrainShieldExplode.tscn"]

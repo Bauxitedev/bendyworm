@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Textures/PlayerSpritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player/Weapon/Weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/PlayerSpriteframes.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Shaders/smooth_pixel_art_3d.shader" type="Shader" id=5]
+[ext_resource path="res://Scenes/Player/ChargingCircle.gd" type="Script" id=6]
+[ext_resource path="res://Textures/UI/ChargingCircle.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Components/HealthHolder.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SphereShape" id=1]
+radius = 6.16
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/albedo_color = Color( 0.36, 0.96, 1.12, 1 )
+shader_param/circle_progress = 1.0
+shader_param/albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/albedo_color = Color( 1.07, 1.17, 1.6, 1 )
+shader_param/circle_progress = 1.0
+shader_param/albedo_texture = ExtResource( 7 )
+
+[node name="Player" type="KinematicBody" groups=[
+"PLAYER",
+]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="GroundCastL" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -9, 0 )
+collision_mask = 5
+
+[node name="GroundCastR" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -9, 0 )
+collision_mask = 5
+
+[node name="RoofCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 9, 0 )
+collision_mask = 5
+
+[node name="HealthHolder" parent="." instance=ExtResource( 8 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250 )
+projection = 1
+current = true
+size = 350.0
+far = 1000.0
+
+[node name="SpriteBase" type="Spatial" parent="."]
+
+[node name="FlipBase" type="Spatial" parent="SpriteBase"]
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="SpriteBase/FlipBase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+material_override = SubResource( 2 )
+pixel_size = 1.0
+frames = ExtResource( 4 )
+animation = "Death"
+playing = true
+
+[node name="Weapon" parent="SpriteBase/FlipBase" instance=ExtResource( 3 )]
+chargingcircle_path = NodePath("../../ChargingCircle")
+
+[node name="ChargingCircle" type="Sprite3D" parent="SpriteBase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
+material_override = SubResource( 3 )
+pixel_size = 1.0
+texture = ExtResource( 7 )
+script = ExtResource( 6 )
+
+[node name="JumpTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.4
+
+[node name="TweenIdle" type="Tween" parent="."]
+
+[connection signal="on_death" from="HealthHolder" to="." method="_on_HealthHolder_on_death"]
+[connection signal="on_hurt" from="HealthHolder" to="." method="_on_HealthHolder_on_hurt"]
+[connection signal="animation_finished" from="SpriteBase/FlipBase/Sprite3D" to="." method="_on_Sprite3D_animation_finished"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]

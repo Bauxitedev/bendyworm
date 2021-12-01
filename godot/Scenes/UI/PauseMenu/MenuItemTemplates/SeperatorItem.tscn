@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/UI/PauseMenu/MenuItemTemplates/BaseItem.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.509804 )
+expand_margin_bottom = 1.0
+
+[node name="SeperatorItem" type="HSeparator"]
+margin_right = 80.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 6
+custom_styles/separator = SubResource( 1 )
+custom_constants/separation = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

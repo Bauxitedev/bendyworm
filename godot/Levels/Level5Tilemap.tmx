@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="136" height="16" tilewidth="16" tileheight="16" infinite="0" backgroundcolor="#242424" nextlayerid="3" nextobjectid="123">
+ <tileset firstgid="1" source="1bitTileset.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="136" height="16">
+  <data encoding="csv">
+331,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,333,
+33,33,33,0,0,33,0,33,0,33,0,33,0,33,0,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,352,353,354,250,250,352,353,354,393,393,393,393,393,393,393,393,393,394,372,374,13,
+355,356,357,0,0,33,0,33,0,33,0,33,0,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,372,373,374,214,214,372,373,374,0,0,0,0,0,0,0,0,0,0,392,394,33,
+375,376,377,0,0,53,0,53,0,53,0,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,251,252,253,0,0,250,392,393,394,250,250,392,393,394,0,0,0,0,0,0,0,0,0,0,0,4,33,
+395,396,397,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,251,252,253,0,0,0,0,0,0,0,31,229,229,229,214,214,33,0,0,0,0,0,0,0,0,0,0,0,0,0,24,33,
+33,33,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,186,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,250,53,0,0,0,0,0,0,0,0,0,0,0,0,0,44,33,
+33,33,33,0,288,289,0,288,289,0,288,289,0,288,289,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,234,234,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,
+33,33,33,0,308,309,0,308,309,0,308,309,0,308,309,0,0,0,0,0,0,0,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,352,353,353,354,355,357,0,0,358,360,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,
+33,33,33,0,328,329,0,328,329,0,328,329,0,328,329,0,0,0,0,0,0,0,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,392,393,393,394,395,397,0,0,398,400,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,
+33,33,33,0,348,349,0,348,349,0,348,349,0,348,349,0,0,0,13,13,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,0,0,0,0,0,0,0,0,0,0,0,352,353,354,0,33,
+33,33,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,50,50,0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,250,13,0,0,0,0,0,0,0,0,0,0,392,393,394,0,33,
+355,356,357,0,251,252,253,0,0,0,0,0,0,0,0,0,13,50,248,248,0,0,0,0,0,0,0,44,0,0,0,0,0,0,0,0,0,187,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,229,229,229,214,214,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,
+375,376,377,0,0,0,0,0,0,0,0,0,0,0,0,13,50,248,248,248,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,352,353,354,250,250,352,353,354,0,0,0,0,0,0,0,0,0,0,0,0,33,
+395,396,397,0,0,0,0,251,252,253,0,0,0,0,13,50,248,248,248,248,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,226,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,372,373,374,214,214,372,373,374,0,0,0,0,0,0,0,0,0,0,352,354,33,
+33,33,33,0,0,0,0,0,0,0,0,0,0,13,50,248,248,248,248,248,227,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,226,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,392,393,394,250,250,392,393,394,353,353,353,353,353,353,353,353,353,354,372,374,53,
+331,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,52,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,332,333
+</data>
+ </layer>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="2" type="shard" x="544" y="96" width="16" height="16">
+   <properties>
+    <property name="my_awesome_property2" value="my_amazing_value2"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="6" type="shard" x="2112" y="176" width="16" height="16">
+   <properties>
+    <property name="my_awesome_property2" value="my_amazing_value2"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="7" type="shard" x="368" y="96" width="16" height="16">
+   <properties>
+    <property name="my_awesome_property2" value="my_amazing_value2"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="8" type="shard" x="1664" y="80" width="16" height="16">
+   <properties>
+    <property name="my_awesome_property2" value="my_amazing_value2"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="9" type="shard" x="1696" y="144" width="16" height="16">
+   <ellipse/>
+  </object>
+  <object id="10" type="player" x="128" y="176" width="16" height="16"/>
+  <object id="13" type="brain" x="2032" y="112" width="16" height="16"/>
+  <object id="38" type="dialogue_trigger" x="176" y="192" width="16" height="16">
+   <properties>
+    <property name="prop_dialogue_name" value="lvl5_start"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="39" type="enemy_redblock" x="608" y="224" width="16" height="16"/>
+  <object id="40" type="enemy_redblock" x="640" y="224" width="16" height="16"/>
+  <object id="41" type="enemy_redblock" x="672" y="224" width="16" height="16"/>
+  <object id="42" type="enemy_redblock" x="704" y="224" width="16" height="16"/>
+  <object id="43" type="enemy_redblock" x="736" y="224" width="16" height="16"/>
+  <object id="45" type="enemy_redblock" x="768" y="224" width="16" height="16"/>
+  <object id="46" type="enemy_redblock" x="800" y="224" width="16" height="16"/>
+  <object id="47" type="enemy_redblock" x="832" y="224" width="16" height="16"/>
+  <object id="48" type="enemy_redblock" x="864" y="224" width="16" height="16"/>
+  <object id="49" type="enemy_redblock" x="896" y="224" width="16" height="16"/>
+  <object id="50" type="enemy_redblock" x="928" y="224" width="16" height="16"/>
+  <object id="51" type="enemy_redblock" x="960" y="224" width="16" height="16"/>
+  <object id="52" type="enemy_redblock" x="992" y="224" width="16" height="16"/>
+  <object id="53" type="enemy_redblock" x="1024" y="224" width="16" height="16"/>
+  <object id="54" type="enemy_redblock" x="1056" y="224" width="16" height="16"/>
+  <object id="55" type="enemy_redblock" x="1088" y="224" width="16" height="16"/>
+  <object id="56" type="enemy_redblock" x="1120" y="224" width="16" height="16"/>
+  <object id="57" type="enemy_redblock" x="1152" y="224" width="16" height="16"/>
+  <object id="58" type="enemy_redblock" x="1184" y="224" width="16" height="16"/>
+  <object id="59" type="enemy_redblock" x="1216" y="224" width="16" height="16"/>
+  <object id="60" type="enemy_redblock" x="1248" y="224" width="16" height="16"/>
+  <object id="61" type="enemy_redblock" x="1280" y="224" width="16" height="16"/>
+  <object id="62" type="enemy_redblock" x="1312" y="224" width="16" height="16"/>
+  <object id="63" type="enemy_redblock" x="1344" y="224" width="16" height="16"/>
+  <object id="64" type="enemy_redblock" x="1376" y="224" width="16" height="16"/>
+  <object id="65" type="enemy_redblock" x="1408" y="224" width="16" height="16"/>
+  <object id="66" type="enemy_redblock" x="1440" y="224" width="16" height="16"/>
+  <object id="67" type="enemy_redblock" x="1472" y="224" width="16" height="16"/>
+  <object id="68" type="enemy_redblock" x="1504" y="224" width="16" height="16"/>
+  <object id="69" type="enemy_redblock" x="1536" y="224" width="16" height="16"/>
+  <object id="70" type="enemy_redblock" x="1568" y="224" width="16" height="16"/>
+  <object id="71" type="enemy_redblock" x="1600" y="224" width="16" height="16"/>
+  <object id="74" type="enemy_redblock" x="1632" y="224" width="16" height="16"/>
+  <object id="75" type="enemy_redblock" x="1664" y="224" width="16" height="16"/>
+  <object id="76" type="enemy_redblock" x="1696" y="224" width="16" height="16"/>
+  <object id="77" type="enemy_redblock" x="1728" y="224" width="16" height="16"/>
+  <object id="78" type="enemy_redblock" x="1760" y="224" width="16" height="16"/>
+  <object id="79" type="enemy_redblock" x="1792" y="224" width="16" height="16"/>
+  <object id="80" type="enemy_redblock" x="624" y="16" width="16" height="16"/>
+  <object id="81" type="enemy_redblock" x="656" y="16" width="16" height="16"/>
+  <object id="82" type="enemy_redblock" x="688" y="16" width="16" height="16"/>
+  <object id="83" type="enemy_redblock" x="720" y="16" width="16" height="16"/>
+  <object id="84" type="enemy_redblock" x="752" y="16" width="16" height="16"/>
+  <object id="85" type="enemy_redblock" x="784" y="16" width="16" height="16"/>
+  <object id="86" type="enemy_redblock" x="816" y="16" width="16" height="16"/>
+  <object id="87" type="enemy_redblock" x="848" y="16" width="16" height="16"/>
+  <object id="88" type="enemy_redblock" x="880" y="16" width="16" height="16"/>
+  <object id="89" type="enemy_redblock" x="912" y="16" width="16" height="16"/>
+  <object id="90" type="enemy_redblock" x="944" y="16" width="16" height="16"/>
+  <object id="91" type="enemy_redblock" x="976" y="16" width="16" height="16"/>
+  <object id="92" type="enemy_redblock" x="1008" y="16" width="16" height="16"/>
+  <object id="93" type="enemy_redblock" x="1040" y="16" width="16" height="16"/>
+  <object id="94" type="enemy_redblock" x="1072" y="16" width="16" height="16"/>
+  <object id="95" type="enemy_redblock" x="1104" y="16" width="16" height="16"/>
+  <object id="96" type="enemy_redblock" x="1136" y="16" width="16" height="16"/>
+  <object id="97" type="enemy_redblock" x="1168" y="16" width="16" height="16"/>
+  <object id="98" type="enemy_redblock" x="1200" y="16" width="16" height="16"/>
+  <object id="99" type="enemy_redblock" x="1232" y="16" width="16" height="16"/>
+  <object id="100" type="enemy_redblock" x="1264" y="16" width="16" height="16"/>
+  <object id="101" type="enemy_redblock" x="1296" y="16" width="16" height="16"/>
+  <object id="102" type="enemy_redblock" x="1328" y="16" width="16" height="16"/>
+  <object id="103" type="enemy_redblock" x="1360" y="16" width="16" height="16"/>
+  <object id="104" type="enemy_redblock" x="1392" y="16" width="16" height="16"/>
+  <object id="105" type="enemy_redblock" x="1424" y="16" width="16" height="16"/>
+  <object id="106" type="enemy_redblock" x="1456" y="16" width="16" height="16"/>
+  <object id="107" type="enemy_redblock" x="1488" y="16" width="16" height="16"/>
+  <object id="108" type="enemy_redblock" x="1520" y="16" width="16" height="16"/>
+  <object id="109" type="enemy_redblock" x="1552" y="16" width="16" height="16"/>
+  <object id="110" type="enemy_redblock" x="1584" y="16" width="16" height="16"/>
+  <object id="111" type="enemy_redblock" x="1616" y="16" width="16" height="16"/>
+  <object id="112" type="enemy_redblock" x="1648" y="16" width="16" height="16"/>
+  <object id="113" type="enemy_redblock" x="1680" y="16" width="16" height="16"/>
+  <object id="114" type="enemy_redblock" x="1712" y="16" width="16" height="16"/>
+  <object id="115" type="enemy_redblock" x="1744" y="16" width="16" height="16"/>
+  <object id="116" type="enemy_redblock" x="1776" y="16" width="16" height="16"/>
+  <object id="117" type="enemy_redblock" x="1808" y="16" width="16" height="16"/>
+  <object id="118" type="enemy_redblock" x="1616" y="32" width="16" height="16"/>
+  <object id="119" type="enemy_redblock" x="1616" y="48" width="16" height="16"/>
+  <object id="120" type="enemy_redblock" x="1616" y="64" width="16" height="16"/>
+  <object id="121" type="enemy_redblock" x="1616" y="80" width="16" height="16"/>
+  <object id="122" type="enemy_redblock" x="1616" y="96" width="16" height="16"/>
+ </objectgroup>
+</map>

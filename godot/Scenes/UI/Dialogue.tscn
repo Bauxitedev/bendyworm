@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/UI/Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/BitmapFont.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Textures/UI/Arrow.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/UI/DialogueText.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.654902 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+shadow_color = Color( 0, 0, 0, 0 )
+
+[node name="Dialogue" type="PanelContainer"]
+pause_mode = 2
+margin_left = 810.0
+margin_top = 440.0
+margin_right = 1110.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 300, 200 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 300.0
+margin_bottom = 200.0
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[empty]"
+text = "[empty]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="TextureRect" parent="VBoxContainer"]
+margin_left = 284.0
+margin_top = 184.0
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 16, 16 )
+size_flags_horizontal = 8
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texts" type="Node" parent="."]
+
+[node name="lvl1_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+Welcome.
+
+Welcome to the Wild Worm Hunters Club, or W.W.H.C. for short.
+$$$
+As a new recruit, you will be tasked with the extraction of energy shards from the local worm population.
+
+As you may know, these worms have been a pest on our local communities. They have destroyed crops, houses, even entire villages. Their appetite knows no bounds, and a particularly big specimen managed to devour an entire city!
+
+$$$
+
+Use the [color=red]arrow keys[/color] to walk, and press [color=red][SPACE][/color] or [color=red][Z][/color] to jump. Hold it down to jump higher.
+
+Since you are inside of a worm, [color=red]the entire world will twist and turn around you[/color]. Take care!
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl1_shard" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = "See those green shards? They are [color=red]energy shards[/color]. They allow you to become much more powerful, if used correctly.
+
+[color=red]Collect all five[/color] of them to continue.
+$$$
+Don't leave a single one behind! You may no longer be able to collect it later on.
+"
+
+[node name="lvl1_worm" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = "After you've collected all five energy shards, your [color=red]Mega Cannon[/color] will be fully energized.
+
+Press and hold [color=red][X][/color] on your keyboard to charge the Mega Cannon (this takes a while). After that, just blast away!
+$$$
+[color=red]Destroy the worm's brain[/color] to complete this mission and escape.
+
+Due to the worm's slippery innards, you may slip and slide while you attempt to do this. Try to find a horizontal surface to stand on."
+
+[node name="lvl2_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+Well done. You showed that worm who's boss.
+$$$
+We picked a particularly... gentle worm for you, as your first mission.
+
+This mission, however, will be a little more... [color=red]nauseating[/color].
+$$$
+If you get stuck (for example, because you forgot to collect a shard), press [color=red][ESC][/color] to open the pause menu. Then, select [color=red]Retry[/color].
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl3_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+You may have noticed that sometimes you need to [color=red]wait[/color] before you can progress further.
+
+This is an unfortunate side effect of the worms being wild animals. They are unpredictable, and have all the reason in the world to try to stop your assault.
+$$$
+However, we have noticed that touching some locations inside the worm seems to [color=red]trigger movement[/color]. Like a bowel movement. We call it \"peristalsis\".
+
+Unfortunately, we don't know exactly where these locations are. But you may be able to use them to your advantage!
+$$$
+Oh, and [color=red]don't touch the red blocks[/color]. They'll kill you.
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl4_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+This particular specimen feeds while [color=red]upside down[/color].
+
+That may... complicate traversal, shall we say.
+$$$
+At least it seems to remain stationary, for now.
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl5_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+This particular specimen is similar to the last one, except it... [color=red]defecates[/color] while upside down.
+
+Additionally, it has a [color=red]strong immune system[/color], as evidenced by its insides, lined with kill blocks. Mind your step!
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl6_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+This specimen in particular peaks our interest. We have decided to call it [color=red]Ouroboros[/color], since it eats itself.
+Which makes it a cannibalistic species.
+
+Very interesting indeed!
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl7_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+We are now entering more dangerous territory. This worm's immune system is [color=red]active[/color], as opposed to passive. Which means it will actively try to hunt down any intruders. That includes you, by the way.
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl8_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+Be warned! I have detected an [color=red]ambush[/color] in this worm. It will throw many immune cells at you in the blink of an eye!
+$$$
+
+Also, I am not sure if you are aware, but you can use the Mega Cannon to  [color=red]destroy immune cells[/color] as well.
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"
+
+[node name="lvl9_start" type="Node" parent="Texts"]
+script = ExtResource( 4 )
+dialogue_text = ">>> [color=yellow]INCOMING TRANSMISSION[/color] <<<
+
+We have reserved the [color=red]strongest worm[/color] for last. This one will try everything in its power to try to stop you.
+
+Good luck!
+$$$
+As a word of advice: try to [color=red]lure the enemies[/color] somewhere else, so you can focus on collecting shards. Make them go really fast, so they require more time to turn around and catch up to you.
+
+>>> [color=yellow]END OF TRANSMISSION[/color] <<<"

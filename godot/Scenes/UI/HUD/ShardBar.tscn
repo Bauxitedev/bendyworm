@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Textures/ShardOutline.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/HUD/ShardBar.gd" type="Script" id=2]
+
+[node name="ShardBar" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shard1" type="TextureRect" parent="."]
+margin_left = 927.0
+margin_right = 937.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Shard2" type="TextureRect" parent="."]
+margin_left = 941.0
+margin_right = 951.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Shard3" type="TextureRect" parent="."]
+margin_left = 955.0
+margin_right = 965.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Shard4" type="TextureRect" parent="."]
+margin_left = 969.0
+margin_right = 979.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Shard5" type="TextureRect" parent="."]
+margin_left = 983.0
+margin_right = 993.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+stretch_mode = 4

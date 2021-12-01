@@ -1,0 +1,181 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Textures/Enemy/Shield/ShieldShard3.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Enemy/Shield/ShieldShard4.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Enemy/Shield/ShieldShard1.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Enemy/Shield/ShieldShard2.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 0.982885, 0.982885, 0.982885, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 50.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 500.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.0
+scale_random = 1.0
+color_ramp = SubResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_color = Color( 0.980392, 0.792157, 0.870588, 1 )
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=17]
+material = SubResource( 16 )
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_color = Color( 0.980392, 0.792157, 0.870588, 1 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=19]
+material = SubResource( 18 )
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_color = Color( 0.980392, 0.792157, 0.870588, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=21]
+material = SubResource( 20 )
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_color = Color( 0.980392, 0.792157, 0.870588, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=23]
+material = SubResource( 22 )
+size = Vector2( 100, 100 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "BrainShieldExplode"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles1:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles3:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles4:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 6.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="BrainShieldExplode" type="Spatial"]
+
+[node name="Particles1" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3957 )
+amount = 100
+lifetime = 2.0
+visibility_aabb = AABB( -219.299, -275.484, -100, 443.482, 446.902, 200 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="Particles2" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3957 )
+amount = 100
+lifetime = 2.0
+visibility_aabb = AABB( -219.299, -275.484, -100, 443.482, 446.902, 200 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 19 )
+
+[node name="Particles3" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3957 )
+amount = 100
+lifetime = 2.0
+visibility_aabb = AABB( -219.299, -275.484, -100, 443.482, 446.902, 200 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 21 )
+
+[node name="Particles4" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3957 )
+amount = 100
+lifetime = 2.0
+visibility_aabb = AABB( -219.299, -275.484, -100, 443.482, 446.902, 200 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 23 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "BrainShieldExplode"
+anims/BrainShieldExplode = SubResource( 14 )

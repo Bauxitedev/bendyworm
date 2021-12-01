@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Textures/Enemy/Shield/ShieldSheet2.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/smooth_pixel_art_3d_additive.shader" type="Shader" id=2]
+[ext_resource path="res://Scenes/Enemy/BrainShield.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Components/HealthHolder.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/Flasher.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Textures/FX/smoke_08.png" type="Texture" id=6]
+
+[sub_resource type="SphereShape" id=1]
+radius = 90.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/albedo_color = Color( 1.13, 0.74, 1.2, 1 )
+shader_param/circle_progress = 1.0
+shader_param/albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.511002, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.982885, 0.982885, 0.982885, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.7
+emission_shape = 1
+emission_sphere_radius = 60.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 1.0
+color_ramp = SubResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_color = Color( 0.52, 0.4004, 0.492093, 1 )
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+size = Vector2( 100, 100 )
+
+[node name="BrainShield" type="StaticBody"]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+material_override = SubResource( 2 )
+pixel_size = 1.0
+texture = ExtResource( 1 )
+hframes = 5
+vframes = 5
+
+[node name="Flasher" parent="Sprite3D" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
+
+[node name="HealthHolder" parent="." instance=ExtResource( 4 )]
+max_hp = 1000.0
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3957 )
+amount = 50
+lifetime = 2.0
+visibility_aabb = AABB( -219.299, -275.484, -100, 443.482, 446.902, 200 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[connection signal="on_death" from="HealthHolder" to="." method="_on_HealthHolder_on_death"]
+[connection signal="on_hurt" from="HealthHolder" to="." method="_on_HealthHolder_on_hurt"]
