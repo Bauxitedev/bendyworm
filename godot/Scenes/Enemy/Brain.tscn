@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Enemy/Brain.gd" type="Script" id=1]
-[ext_resource path="res://Textures/Brain.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Components/HealthHolder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/Brain_Indexed.png" type="Texture" id=4]
 [ext_resource path="res://Shaders/smooth_pixel_art_3d.shader" type="Shader" id=5]
@@ -45,7 +44,7 @@ health_holder_path = NodePath("../../HealthHolder")
 [node name="Sprite3D" type="Sprite3D" parent="SpriteBase"]
 material_override = SubResource( 2 )
 pixel_size = 1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Flasher" parent="SpriteBase/Sprite3D" instance=ExtResource( 6 )]
 
