@@ -1,11 +1,8 @@
 [gd_resource type="NativeScript" load_steps=2 format=2]
 
-[sub_resource type="GDNativeLibrary" id=1]
-entry/Windows.64 = "res://bendyworm_rust.dll"
-dependency/Windows.64 = [  ]
-entry/X11.64 = "res://libbendyworm_rust.so"
+[ext_resource path="res://rust_gdnativelibrary.tres" type="GDNativeLibrary" id=1]
 
 [resource]
 resource_name = "PathRasterizer"
 class_name = "PathRasterizer"
-library = SubResource( 1 )
+library = ExtResource( 1 )
