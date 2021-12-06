@@ -8,7 +8,7 @@ BENDYWORM is a platformer with a twist: the entire world bends and twists around
 
 ![](promo/Gif1.gif) ![](promo/Gif2.gif)  ![](promo/Gif3.gif)
 
-Play it here: https://bauxite.itch.io/bendyworm (Windows only for now)
+Play it here: https://bauxite.itch.io/bendyworm (Windows and Linux only for now)
 
 The game is made for Github Game Off 2021.
 
@@ -37,7 +37,7 @@ The game is a Godot 3.3.3 project, so you can just [download Godot 3.3.3](https:
 
 1. Install [Rustup](https://rustup.rs/) 
 2. Go to the `rust` folder in the project and run `cargo build --release` in the command line
-3. After compilation finishes, copy the file `rust/target/release/bendyworm_rust.dll` to the `godot` folder. (TODO: this doesn't work yet on Linux, but on Linux the file will be called `bendyworm_rust.so`)
+3. After compilation finishes, copy the file `rust/target/release/bendyworm_rust.dll` to the `godot` folder. (on Linux the file will be called `libbendyworm_rust.so`)
 
 Now it should run.
 

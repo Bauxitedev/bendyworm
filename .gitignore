@@ -12,5 +12,7 @@ data_*/
 
 target
 *.dll
+*.so
 bin
 godot/save.sav
+
