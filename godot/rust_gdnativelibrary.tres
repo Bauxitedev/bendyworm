@@ -3,3 +3,4 @@
 [resource]
 entry/Windows.64 = "res://bendyworm_rust.dll"
 dependency/Windows.64 = [  ]
+entry/X11.64 = "res://libbendyworm_rust.so"
