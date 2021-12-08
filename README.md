@@ -41,6 +41,10 @@ The game is a Godot 3.3.3 project, so you can just [download Godot 3.3.3](https:
 
 Now it should run.
 
+## Soundtrack
+
+The game's soundtrack is available on my Bandcamp: https://kenophos.bandcamp.com/album/bendyworm
+
 ## FAQ
 
 ### I want to run the game in windowed mode, not in fullscreen. How?
